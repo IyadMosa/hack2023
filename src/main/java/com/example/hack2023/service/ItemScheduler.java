@@ -32,9 +32,11 @@ public class ItemScheduler {
         LocalDate today = LocalDate.now();
         LocalDate tomorrow = today.plus(1, ChronoUnit.DAYS);
         List<Item> itemList = service.findAll(null);
+
         for (Item item : itemList) {
             if (convertToLocalDate(item.getExpDate()).isBefore(tomorrow)) {
                 item.setExpiringNextDay(true);
+                service.updateExpiringNextDayById(item.getId(), true);
             }
         }
     }

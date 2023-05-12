@@ -8,14 +8,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.transaction.Transactional;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.springframework.core.io.Resource;
 
 
 @Service
@@ -67,9 +71,21 @@ public class ItemService {
 
         // convert the JSON file to a list of Item objects
         ObjectMapper objectMapper = new ObjectMapper();
-        List<Item> items = objectMapper.readValue(inputStream, new TypeReference<List<Item>>(){});
+        List<Item> items = objectMapper.readValue(inputStream, new TypeReference<List<Item>>() {
+        });
 
         // save the items to the database
         repository.saveAll(items);
+    }
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @Transactional
+    public void updateExpiringNextDayById(Long id, boolean expiringNextDay) {
+        Query query = entityManager.createQuery("UPDATE Item i SET i.expiringNextDay = :expiringNextDay WHERE i.id = :id");
+        query.setParameter("expiringNextDay", expiringNextDay);
+        query.setParameter("id", id);
+        query.executeUpdate();
     }
 }
