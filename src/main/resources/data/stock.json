@@ -1,0 +1,116 @@
+[
+  {
+    "amount": 3,
+    "name": "milk",
+    "expDate": "19/05/2023",
+    "user": "iyada"
+  },
+  {
+    "amount": 2,
+    "name": "bread",
+    "expDate": "20/05/2023",
+    "user": "mosa"
+  },
+  {
+    "amount": 4,
+    "name": "cheese",
+    "expDate": "22/05/2023",
+    "user": "mohammad"
+  },
+  {
+    "amount": 1,
+    "name": "eggs",
+    "expDate": "20/05/2023",
+    "user": "iyada"
+  },
+  {
+    "amount": 5,
+    "name": "apples",
+    "expDate": "23/05/2023",
+    "user": "mosa"
+  },
+  {
+    "amount": 2,
+    "name": "yogurt",
+    "expDate": "24/05/2023",
+    "user": "mohammad"
+  },
+  {
+    "amount": 3,
+    "name": "chicken",
+    "expDate": "21/05/2023",
+    "user": "iyada"
+  },
+  {
+    "amount": 4,
+    "name": "bananas",
+    "expDate": "23/05/2023",
+    "user": "mosa"
+  },
+  {
+    "amount": 2,
+    "name": "ham",
+    "expDate": "25/05/2023",
+    "user": "mohammad"
+  },
+  {
+    "amount": 1,
+    "name": "orange juice",
+    "expDate": "21/05/2023",
+    "user": "iyada"
+  },
+  {
+    "amount": 5,
+    "name": "mangoes",
+    "expDate": "24/05/2023",
+    "user": "mosa"
+  },
+  {
+    "amount": 3,
+    "name": "lettuce",
+    "expDate": "22/05/2023",
+    "user": "mohammad"
+  },
+  {
+    "amount": 1,
+    "name": "grapes",
+    "expDate": "12/05/2023",
+    "user": "iyada"
+  },
+  {
+    "amount": 4,
+    "name": "milk",
+    "expDate": "23/05/2023",
+    "user": "mosa"
+  },
+  {
+    "amount": 2,
+    "name": "cheese",
+    "expDate": "10/05/2023",
+    "user": "mohammad"
+  },
+  {
+    "amount": 5,
+    "name": "eggs",
+    "expDate": "20/05/2023",
+    "user": "iyada"
+  },
+  {
+    "amount": 3,
+    "name": "apples",
+    "expDate": "23/05/2023",
+    "user": "mosa"
+  },
+  {
+    "amount": 1,
+    "name": "yogurt",
+    "expDate": "24/05/2023",
+    "user": "mohammad"
+  },
+  {
+    "amount": 4,
+    "name": "chicken",
+    "expDate": "11/05/2023",
+    "user": "mohammad"
+  }
+]

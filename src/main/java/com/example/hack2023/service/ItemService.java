@@ -3,13 +3,19 @@ package com.example.hack2023.service;
 import com.example.hack2023.model.Item;
 import com.example.hack2023.model.Pool;
 import com.example.hack2023.repository.ItemRepository;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.core.io.Resource;
 
 
 @Service
@@ -51,5 +57,19 @@ public class ItemService {
         pool.setItemName(item.getName());
         poolService.add(pool);
 
+    }
+
+
+    public void loadItems() throws IOException {
+        // read the JSON file from the classpath
+        Resource resource = new ClassPathResource("data/stock.json");
+        InputStream inputStream = resource.getInputStream();
+
+        // convert the JSON file to a list of Item objects
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<Item> items = objectMapper.readValue(inputStream, new TypeReference<List<Item>>(){});
+
+        // save the items to the database
+        repository.saveAll(items);
     }
 }

@@ -20,7 +20,7 @@ public class OpenAIService {
 
     private final String apiUrl = "https://api.openai.com/v1/engines/text-davinci-003/completions";
 
-    private final String apiKey = "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";
+    private final String apiKey = "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";
 
     public List<String> suggestRecipes(List<String> foodItems) {
         RestTemplate restTemplate = new RestTemplate();
